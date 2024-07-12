@@ -1,0 +1,71 @@
+.progress-tracker {
+    padding: 1rem;
+    width: 60vw;
+    position: relative;
+    transition: 1s;
+}
+
+
+.title {
+    padding: 0.5rem 0.5rem;
+    float: left;
+}
+
+.sort-button {
+    padding: 0.5rem 0.5rem;
+    float: right;
+}
+
+.tracker {
+    display: flex;
+    width: 100%;
+    padding: 1rem 0rem;
+    border-top: 1px solid #a8a8a8;
+}
+
+.tracker-left {
+    padding: 0.5rem 1rem;
+    width: 30%;
+}
+
+.tracker-mid {
+    padding: 0.5rem;
+    width: 70%;
+}
+
+
+.tracker-title {
+    font-size: 18px;
+    color: #444444;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.tracker-para {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #444444;
+    opacity: 0.6;
+}
+
+.tracker-info-1 {
+    align-items: center;
+    color: #6A707E;
+    width: 100%;
+}
+
+.tracker-info-2 {
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+}
+
+.tracker-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
