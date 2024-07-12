@@ -53,11 +53,11 @@ export default function Tracker({
 						<div className='tracker-info-1'>
 							<div className='tracker-info-2'>
 								<PersonIcon style={{ marginRight: "8px" }} />
-								Created By :{createdBy}
+								Created By: {createdBy}
 							</div>
 							<div className='tracker-info-2'>
 								<PersonIcon style={{ marginRight: "8px" }} />
-								Assigned To :{assignedTo}
+								Assigned To: {assignedTo}
 							</div>
 						</div>
 					</div>

@@ -1,16 +1,12 @@
 import "./ProgressTracker.css";
 import { Paper, Button, Menu, MenuItem } from "@mui/material";
-import {} from "@mui/material";
+import { } from "@mui/material";
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
-import React, { BaseSyntheticEvent, useEffect, useRef, useState } from "react";
+import { BaseSyntheticEvent, SyntheticEvent, useEffect, useState } from "react";
 import trackableProcesses from "./MockProcessData";
 import Tracker, { TrackableProcess } from "./Tracker";
 import Pagination from "../../Pagination/Pagination";
-import {
-	TransitionGroup,
-	CSSTransition,
-	Transition,
-} from "react-transition-group";
+import { Search as SearchIcon } from "@mui/icons-material";
 
 function getProcessData(): TrackableProcess[] {
 	return trackableProcesses;
@@ -24,6 +20,7 @@ export default function ProgressTracker() {
 	const [selectedSortBy, setSelectedSortBy] = useState<"progress" | "name">(
 		"name"
 	);
+	const [searchTracker, setSearchTracker] = useState<string>("")
 
 	function onPaginationSectionSelect(selection: number) {
 		setPaginationSection(selection);
@@ -62,11 +59,18 @@ export default function ProgressTracker() {
 		setIsReversed(!isReversed);
 	};
 
+	const handleSearchTrackerInput = (e: any) => {
+		setSearchTracker(e.currentTarget.value)
+	}
+
 	return (
 		<div className='progress-tracker'>
-			<Paper elevation={3}>
+			<Paper elevation={3} className='progress-tracker-page'>
 				<div className='header'>
-					<div className='title'>Progress Tracker</div>
+				
+					<div className='title'>Progress Tracker <SearchIcon style={{ position: "relative", left: "50px"}} />
+						 <input className="tracker-searchbar" type="text" placeholder="Search Process..." onInput={handleSearchTrackerInput}  />
+					</div>
 					<div className='progress-right'>
 						<div>
 							<Button
@@ -103,16 +107,16 @@ export default function ProgressTracker() {
 							</Menu>
 						</div>
 					</div>
-					{processData
-						.sort(sortBy(selectedSortBy))
+					<div className="progress-trackers-container">
+						{processData.sort(sortBy(selectedSortBy))
+						.filter( (e) => e.title.toLowerCase().includes(searchTracker.toLowerCase())  )
 						.slice(
 							paginationSection * paginationShowMaxItems,
 							paginationSection * paginationShowMaxItems +
-								paginationShowMaxItems
-						)
-						.map((e) => (
-							<Tracker {...e} />
-						))}
+							paginationShowMaxItems)
+						.map((e) => (<Tracker {...e} />))}
+					</div>
+
 				</div>
 				<hr />
 				<Pagination

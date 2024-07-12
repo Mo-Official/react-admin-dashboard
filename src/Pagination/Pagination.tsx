@@ -14,7 +14,7 @@ interface PaginationProps {
 }
 
 export default function Pagination({
-	pages = 19,
+	pages = 0,
 	selectedPage = 0,
 	onPageSelection,
 }: PaginationProps) {
@@ -27,6 +27,7 @@ export default function Pagination({
 					<div
 						className={`number ${selectedPage == i ? "selected" : ""}`}
 						onClick={() => handleSelectedPageClick(i)}
+						style={{cursor: "pointer"}}
 					>
 						{i + 1}
 					</div>
