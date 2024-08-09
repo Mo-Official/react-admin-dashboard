@@ -4,8 +4,7 @@ import ProgressTracker from "../Components/ProgressTracker/ProgressTracker";
 
 export default function Dashboard() {
 	return (
-		<div className='App'>
-			<Sidebar />
+		<>
 			<div className='container'>
 				<Navbar />
 				<div className='lg-container'>
@@ -20,6 +19,6 @@ export default function Dashboard() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }

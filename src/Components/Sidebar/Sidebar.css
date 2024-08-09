@@ -12,6 +12,15 @@
 
 }
 
+.sidebar-hidden {
+    width: 7vw;
+}
+
+.sidebar-hidden .sidebar-list {
+    display: none;
+}
+
+
 .sidebar::-webkit-scrollbar {
     display: none;
 }
@@ -28,7 +37,7 @@
     box-shadow: 1px 1px 1px #261E4C;
 }
 
-.sidebar-list-1 {
+.sidebar-list {
     background-color: #FFFFFF;
     color: #979797;
 }
